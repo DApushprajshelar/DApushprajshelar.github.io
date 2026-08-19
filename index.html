@@ -3,10 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pushpraj Shelar - Data Analyst | Business Intelligence Analyst | Power BI | SQL | Python | Tableau">
-    <title>Pushpraj Shelar | Data Analyst</title>
+
+    <meta name="description"
+          content="Pushpraj Shelar — Data Analyst and Business Intelligence professional specializing in Power BI, SQL, Python, Tableau, data visualization, ETL and business analytics.">
+
+    <meta name="author" content="Pushpraj Shelar">
+
+    <title>Pushpraj Shelar | Data Analyst & BI Professional</title>
 
     <style>
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        :root {
+            --bg: #070b14;
+            --bg-soft: #0c1220;
+            --card: rgba(17, 25, 40, 0.72);
+            --card-solid: #111827;
+            --text: #f5f7fb;
+            --muted: #9ca8bb;
+            --line: rgba(255,255,255,0.09);
+
+            --accent: #63e6be;
+            --accent-2: #7c8cff;
+            --accent-3: #38bdf8;
+
+            --max-width: 1180px;
+
+            --shadow:
+                0 25px 70px rgba(0,0,0,0.35);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,590 +47,1726 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(99,230,190,0.08),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(124,140,255,0.09),
+                    transparent 28%
+                ),
+                var(--bg);
+
+            color: var(--text);
             line-height: 1.6;
-            color: #1f2937;
-            background: #f8fafc;
+            overflow-x: hidden;
         }
 
         a {
-            text-decoration: none;
             color: inherit;
+            text-decoration: none;
         }
 
         .container {
-            width: 90%;
-            max-width: 1100px;
+            width: min(92%, var(--max-width));
             margin: auto;
         }
 
-        /* Navigation */
+        section {
+            padding: 110px 0;
+            position: relative;
+        }
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
         nav {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
             position: sticky;
             top: 0;
             z-index: 1000;
+
+            background: rgba(7,11,20,0.72);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid var(--line);
         }
 
-        .nav-container {
+        .nav-inner {
+            min-height: 74px;
+
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            min-height: 70px;
+            justify-content: space-between;
         }
 
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #111827;
+        .brand {
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            font-size: 1.05rem;
+        }
+
+        .brand span {
+            color: var(--accent);
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 28px;
             list-style: none;
         }
 
         .nav-links a {
-            color: #4b5563;
-            font-size: 0.95rem;
-            font-weight: 500;
+            color: var(--muted);
+            font-size: 0.9rem;
+            transition: 0.25s ease;
         }
 
         .nav-links a:hover {
-            color: #2563eb;
+            color: var(--accent);
         }
 
-        /* Hero */
+        /* =========================================================
+           HERO
+        ========================================================= */
+
         .hero {
-            background: #ffffff;
-            padding: 90px 0;
+            min-height: calc(100vh - 74px);
+
+            display: flex;
+            align-items: center;
+
+            padding: 100px 0 90px;
         }
 
-        .hero-content {
-            max-width: 850px;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 70px;
+            align-items: center;
         }
 
-        .eyebrow {
-            color: #2563eb;
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 7px 13px;
+
+            border: 1px solid rgba(99,230,190,0.2);
+            border-radius: 100px;
+
+            background: rgba(99,230,190,0.06);
+
+            color: var(--accent);
+
+            font-size: 0.78rem;
             font-weight: 700;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
+
+            margin-bottom: 25px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+
+            box-shadow: 0 0 14px var(--accent);
         }
 
         .hero h1 {
-            font-size: 3.2rem;
-            line-height: 1.15;
-            color: #111827;
-            margin-bottom: 18px;
+            font-size: clamp(3.1rem, 7vw, 6.2rem);
+            line-height: 0.95;
+            letter-spacing: -5px;
+
+            margin-bottom: 25px;
         }
 
-        .hero h2 {
-            font-size: 1.4rem;
+        .hero h1 span {
+            background:
+                linear-gradient(
+                    100deg,
+                    var(--accent),
+                    var(--accent-3),
+                    var(--accent-2)
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-title {
+            font-size: clamp(1.15rem, 2vw, 1.55rem);
+            color: #dce4f1;
+
+            margin-bottom: 22px;
             font-weight: 500;
-            color: #4b5563;
-            margin-bottom: 20px;
         }
 
-        .hero p {
-            max-width: 760px;
-            color: #6b7280;
+        .hero-description {
+            max-width: 720px;
+
+            color: var(--muted);
+
             font-size: 1.05rem;
-            margin-bottom: 30px;
+            line-height: 1.85;
+
+            margin-bottom: 32px;
         }
 
-        .buttons {
+        .hero-buttons {
             display: flex;
-            gap: 14px;
+            gap: 13px;
             flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-block;
-            padding: 12px 22px;
-            border-radius: 6px;
-            font-weight: 600;
-            border: 1px solid #2563eb;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 12px 19px;
+
+            border-radius: 9px;
+
+            font-size: 0.9rem;
+            font-weight: 700;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
         }
 
         .btn-primary {
-            background: #2563eb;
-            color: white;
+            background: var(--accent);
+            color: #06120e;
+
+            box-shadow:
+                0 12px 35px rgba(99,230,190,0.16);
         }
 
         .btn-secondary {
-            background: white;
-            color: #2563eb;
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,0.03);
+            color: var(--text);
         }
 
-        /* Sections */
-        section {
-            padding: 75px 0;
+        /* =========================================================
+           HERO ANALYTICS VISUAL
+        ========================================================= */
+
+        .analytics-card {
+            position: relative;
+
+            min-height: 410px;
+
+            border: 1px solid var(--line);
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.05),
+                    rgba(255,255,255,0.015)
+                );
+
+            box-shadow: var(--shadow);
+
+            overflow: hidden;
+
+            padding: 28px;
         }
 
-        .section-title {
-            font-size: 2rem;
-            color: #111827;
-            margin-bottom: 10px;
+        .analytics-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 260px;
+            height: 260px;
+
+            right: -100px;
+            top: -100px;
+
+            background: var(--accent);
+
+            filter: blur(100px);
+            opacity: 0.12;
         }
 
-        .section-subtitle {
-            color: #6b7280;
-            margin-bottom: 35px;
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 30px;
         }
 
-        /* About */
-        .about-text {
-            max-width: 850px;
-            color: #4b5563;
-            font-size: 1.02rem;
-        }
-
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 24px;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-        }
-
-        .skill-card h3 {
-            color: #111827;
-            margin-bottom: 12px;
-        }
-
-        .skill-card p {
-            color: #6b7280;
-            font-size: 0.95rem;
-        }
-
-        /* Experience */
-        .experience {
-            background: #ffffff;
-        }
-
-        .experience-card {
-            border-left: 3px solid #2563eb;
-            padding-left: 25px;
-            max-width: 900px;
-        }
-
-        .experience-card h3 {
-            color: #111827;
-            font-size: 1.3rem;
-        }
-
-        .company {
-            color: #2563eb;
-            font-weight: 600;
-            margin: 5px 0;
-        }
-
-        .date {
-            color: #6b7280;
+        .chart-title {
             font-size: 0.9rem;
-            margin-bottom: 18px;
+            font-weight: 700;
         }
 
-        .experience-card ul {
-            padding-left: 20px;
-            color: #4b5563;
+        .chart-label {
+            color: var(--accent);
+            font-size: 0.75rem;
         }
 
-        .experience-card li {
+        .chart {
+            height: 190px;
+
+            display: flex;
+            align-items: flex-end;
+            gap: 12px;
+
+            border-bottom: 1px solid var(--line);
+            border-left: 1px solid var(--line);
+
+            padding: 15px;
+        }
+
+        .bar {
+            flex: 1;
+
+            min-height: 20px;
+
+            border-radius: 5px 5px 0 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    var(--accent-2),
+                    var(--accent)
+                );
+
+            opacity: 0.85;
+
+            animation: grow 1.3s ease forwards;
+            transform-origin: bottom;
+        }
+
+        @keyframes grow {
+            from {
+                transform: scaleY(0);
+            }
+
+            to {
+                transform: scaleY(1);
+            }
+        }
+
+        .analytics-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+
+            margin-top: 22px;
+        }
+
+        .metric {
+            padding: 15px;
+
+            background: rgba(255,255,255,0.035);
+
+            border: 1px solid var(--line);
+            border-radius: 12px;
+        }
+
+        .metric strong {
+            display: block;
+
+            font-size: 1.2rem;
+            color: var(--text);
+        }
+
+        .metric span {
+            color: var(--muted);
+            font-size: 0.72rem;
+        }
+
+        /* =========================================================
+           SECTION HEADERS
+        ========================================================= */
+
+        .section-heading {
+            max-width: 720px;
+            margin-bottom: 55px;
+        }
+
+        .section-number {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
             margin-bottom: 10px;
         }
 
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
-        }
+        .section-heading h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -1.5px;
+            line-height: 1.1;
 
-        .project-card {
-            background: white;
-            padding: 26px;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-        }
-
-        .project-card h3 {
-            color: #111827;
-            margin-bottom: 12px;
-        }
-
-        .project-card p {
-            color: #6b7280;
             margin-bottom: 15px;
         }
 
-        .tech {
-            font-size: 0.85rem;
-            color: #2563eb;
+        .section-heading p {
+            color: var(--muted);
+            max-width: 650px;
+        }
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .about-intro {
+            font-size: 1.45rem;
+            line-height: 1.5;
             font-weight: 600;
         }
 
-        /* Contact */
-        .contact {
-            background: #ffffff;
+        .about-intro span {
+            color: var(--accent);
         }
 
-        .contact-content {
-            max-width: 750px;
+        .about-copy {
+            color: var(--muted);
+            line-height: 1.9;
         }
 
-        .contact-content p {
-            color: #6b7280;
+        .about-copy p {
+            margin-bottom: 18px;
+        }
+
+        /* =========================================================
+           HIGHLIGHTS
+        ========================================================= */
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .highlight {
+            padding: 25px;
+
+            background: var(--card);
+
+            border: 1px solid var(--line);
+            border-radius: 15px;
+
+            transition: 0.3s ease;
+        }
+
+        .highlight:hover {
+            transform: translateY(-5px);
+            border-color: rgba(99,230,190,0.3);
+        }
+
+        .highlight strong {
+            display: block;
+            font-size: 1.7rem;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .highlight span {
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px;
+        }
+
+        .skill-card {
+            padding: 27px;
+
+            background: var(--card);
+
+            border: 1px solid var(--line);
+            border-radius: 16px;
+
+            transition: 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(124,140,255,0.35);
+        }
+
+        .skill-icon {
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(99,230,190,0.12),
+                    rgba(124,140,255,0.12)
+                );
+
+            color: var(--accent);
+
+            font-weight: 800;
+
             margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.8;
+        }
+
+        /* =========================================================
+           EXPERIENCE
+        ========================================================= */
+
+        .experience {
+            background: rgba(255,255,255,0.015);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 8px;
+            top: 0;
+            bottom: 0;
+
+            width: 1px;
+
+            background: var(--line);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 45px;
+            padding-bottom: 55px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 2px;
+            top: 4px;
+
+            width: 13px;
+            height: 13px;
+
+            border-radius: 50%;
+
+            background: var(--accent);
+
+            box-shadow:
+                0 0 0 5px rgba(99,230,190,0.08),
+                0 0 20px rgba(99,230,190,0.3);
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 800;
+
+            margin-bottom: 7px;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+        }
+
+        .timeline-company {
+            color: var(--accent-3);
+            font-weight: 600;
+            margin-bottom: 17px;
+        }
+
+        .timeline-item ul {
+            padding-left: 18px;
+            color: var(--muted);
+        }
+
+        .timeline-item li {
+            margin-bottom: 10px;
+            line-height: 1.75;
+        }
+
+        /* =========================================================
+           PROJECTS
+        ========================================================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            position: relative;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.015)
+                );
+
+            border: 1px solid var(--line);
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            transition: 0.35s ease;
+        }
+
+        .project::after {
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+            height: 130px;
+
+            right: -60px;
+            bottom: -60px;
+
+            background: var(--accent-2);
+
+            filter: blur(70px);
+            opacity: 0.08;
+        }
+
+        .project:hover {
+            transform: translateY(-7px);
+            border-color: rgba(99,230,190,0.28);
+            box-shadow: var(--shadow);
+        }
+
+        .project-number {
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+        }
+
+        .project h3 {
+            font-size: 1.25rem;
+            line-height: 1.35;
+            margin-bottom: 13px;
+        }
+
+        .project p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .tech {
+            padding: 5px 9px;
+
+            border-radius: 6px;
+
+            background: rgba(99,230,190,0.06);
+            border: 1px solid rgba(99,230,190,0.12);
+
+            color: #b7f7e2;
+
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        /* =========================================================
+           WORKFLOW
+        ========================================================= */
+
+        .workflow {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+        }
+
+        .workflow-step {
+            padding: 23px 18px;
+
+            border: 1px solid var(--line);
+            border-radius: 13px;
+
+            background: rgba(255,255,255,0.025);
+        }
+
+        .workflow-step strong {
+            display: block;
+
+            color: var(--accent);
+
+            font-size: 0.78rem;
+
+            margin-bottom: 8px;
+        }
+
+        .workflow-step span {
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact {
+            padding-bottom: 120px;
+        }
+
+        .contact-box {
+            position: relative;
+
+            padding: 65px;
+
+            border: 1px solid var(--line);
+            border-radius: 24px;
+
+            background:
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(99,230,190,0.08),
+                    transparent 30%
+                ),
+                rgba(255,255,255,0.025);
+
+            overflow: hidden;
+        }
+
+        .contact-box h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            letter-spacing: -2px;
+
+            max-width: 650px;
+
+            margin-bottom: 18px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            max-width: 620px;
+
+            margin-bottom: 28px;
         }
 
         .contact-links {
             display: flex;
-            gap: 15px;
             flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .contact-links a {
-            color: #2563eb;
-            font-weight: 600;
+        .contact-link {
+            padding: 10px 15px;
+
+            border: 1px solid var(--line);
+            border-radius: 8px;
+
+            color: var(--text);
+
+            font-size: 0.85rem;
+
+            transition: 0.25s ease;
         }
 
-        /* Footer */
+        .contact-link:hover {
+            color: var(--accent);
+            border-color: rgba(99,230,190,0.3);
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
         footer {
-            background: #111827;
-            color: #d1d5db;
+            border-top: 1px solid var(--line);
+
+            padding: 28px 0;
+
+            color: #687386;
+
+            font-size: 0.75rem;
+
             text-align: center;
-            padding: 25px 0;
-            font-size: 0.9rem;
         }
 
-        /* Mobile */
-        @media (max-width: 700px) {
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 950px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .analytics-card {
+                max-width: 600px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .highlights {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .workflow {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            section {
+                padding: 75px 0;
+            }
+
             .nav-links {
                 display: none;
             }
 
             .hero {
-                padding: 65px 0;
+                padding: 75px 0;
             }
 
             .hero h1 {
-                font-size: 2.3rem;
+                letter-spacing: -3px;
             }
 
-            .hero h2 {
-                font-size: 1.15rem;
+            .analytics-card {
+                min-height: 350px;
             }
 
-            section {
-                padding: 55px 0;
+            .skills-grid,
+            .projects-grid,
+            .highlights,
+            .workflow {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 35px 25px;
             }
         }
+
     </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <div class="logo">Pushpraj Shelar</div>
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<nav>
+
+    <div class="container nav-inner">
+
+        <a href="#" class="brand">
+            Pushpraj<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                Data Analytics & Business Intelligence
+            </div>
+
+            <h1>
+                Pushpraj<br>
+                <span>Shelar.</span>
+            </h1>
+
+            <div class="hero-title">
+                Data Analyst · BI Analyst · Power BI · SQL · Python · Tableau
+            </div>
+
+            <p class="hero-description">
+
+                Data Analyst with 4+ years of experience delivering
+                data analytics and business intelligence solutions across
+                dashboard development, SQL development, data visualization,
+                ETL processes, data modeling, reporting automation and
+                business performance analysis.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    Explore Projects →
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Let's Connect
+                </a>
+
+            </div>
+
         </div>
-    </nav>
 
-    <!-- Hero -->
-    <header class="hero">
-        <div class="container hero-content">
 
-            <div class="eyebrow">Data Analytics & Business Intelligence</div>
+        <!-- Analytics visual -->
 
-            <h1>Pushpraj Shelar</h1>
+        <div class="analytics-card">
+
+            <div class="chart-header">
+
+                <div class="chart-title">
+                    Analytics Snapshot
+                </div>
+
+                <div class="chart-label">
+                    DATA → INSIGHT
+                </div>
+
+            </div>
+
+
+            <div class="chart">
+
+                <div class="bar" style="height:42%"></div>
+                <div class="bar" style="height:58%"></div>
+                <div class="bar" style="height:48%"></div>
+                <div class="bar" style="height:72%"></div>
+                <div class="bar" style="height:65%"></div>
+                <div class="bar" style="height:83%"></div>
+                <div class="bar" style="height:94%"></div>
+
+            </div>
+
+
+            <div class="analytics-metrics">
+
+                <div class="metric">
+                    <strong>4+</strong>
+                    <span>Years Experience</span>
+                </div>
+
+                <div class="metric">
+                    <strong>BI</strong>
+                    <span>Analytics Focus</span>
+                </div>
+
+                <div class="metric">
+                    <strong>SQL</strong>
+                    <span>Data & Databases</span>
+                </div>
+
+                <div class="metric">
+                    <strong>ETL</strong>
+                    <span>Data Pipelines</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                01 / About
+            </div>
 
             <h2>
-                Data Analyst | Business Intelligence Analyst | Power BI | SQL | Python | Tableau
+                Turning data into<br>
+                business insight.
             </h2>
 
             <p>
-                Data Analyst with 4+ years of experience delivering data analytics and
-                business intelligence solutions across dashboard development, SQL,
-                data visualization, reporting automation, ETL, data modeling and
-                business performance analysis.
-            </p>
-
-            <div class="buttons">
-                <a href="#projects" class="btn btn-primary">View My Projects</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
-            </div>
-
-        </div>
-    </header>
-
-    <!-- About -->
-    <section id="about">
-        <div class="container">
-
-            <h2 class="section-title">About Me</h2>
-
-            <p class="section-subtitle">
-                Turning data into actionable business insights.
-            </p>
-
-            <p class="about-text">
-                I specialize in transforming complex datasets into meaningful insights
-                through data analysis, business intelligence and interactive reporting.
-                My experience includes developing Power BI dashboards, writing and
-                optimizing SQL queries, building ETL workflows, performing exploratory
-                data analysis and supporting data-driven business decisions.
+                A data-focused professional combining analytics,
+                visualization and business intelligence to make
+                complex information easier to understand and act upon.
             </p>
 
         </div>
-    </section>
 
-    <!-- Skills -->
-    <section id="skills">
-        <div class="container">
 
-            <h2 class="section-title">Technical Skills</h2>
+        <div class="about-grid">
 
-            <p class="section-subtitle">
-                Technologies and capabilities I work with.
-            </p>
+            <div>
 
-            <div class="skills-grid">
+                <div class="about-intro">
 
-                <div class="skill-card">
-                    <h3>Business Intelligence</h3>
-                    <p>
-                        Power BI, Power BI Service, Tableau, KPI Dashboards,
-                        Data Visualization, Business Reporting, Looker, LookML
-                    </p>
-                </div>
+                    I work at the intersection of
+                    <span>data, technology and business.</span>
 
-                <div class="skill-card">
-                    <h3>SQL & Databases</h3>
-                    <p>
-                        SQL, SQL Server, MySQL, Joins, CTEs, Window Functions,
-                        Stored Procedures, Views, Query Optimization
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Python & Analytics</h3>
-                    <p>
-                        Python, Pandas, NumPy, Matplotlib, Seaborn, EDA,
-                        Descriptive Statistics, Hypothesis Testing, Regression,
-                        Time Series
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Data Engineering & Cloud</h3>
-                    <p>
-                        ETL Pipelines, Azure Data Factory, Azure Data Lake,
-                        Azure Blob Storage, Databricks, PySpark, Snowflake,
-                        REST APIs, Git
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Microsoft Analytics Stack</h3>
-                    <p>
-                        Power Query, DAX, SSMS, SSIS, SSAS, Power Automate,
-                        PowerApps and Logic Apps
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Data Quality & Reporting</h3>
-                    <p>
-                        Data Validation, Data Quality, KPI Reporting,
-                        Dashboard Development, Reporting Automation and
-                        Business Performance Analysis
-                    </p>
                 </div>
 
             </div>
+
+
+            <div class="about-copy">
+
+                <p>
+                    My experience spans data analytics, business intelligence,
+                    dashboard development, SQL development, ETL processes,
+                    data modeling, reporting automation and business
+                    performance analysis.
+                </p>
+
+                <p>
+                    I work with tools across the analytics ecosystem including
+                    Power BI, Tableau, SQL, Python, DAX, Power Query and
+                    advanced Excel, along with cloud and data engineering
+                    technologies.
+                </p>
+
+                <p>
+                    My approach is focused on transforming raw and complex
+                    datasets into structured information, meaningful KPIs,
+                    interactive dashboards and actionable insights.
+                </p>
+
+            </div>
+
         </div>
-    </section>
 
-    <!-- Experience -->
-    <section id="experience" class="experience">
-        <div class="container">
+    </div>
 
-            <h2 class="section-title">Professional Experience</h2>
+</section>
 
-            <p class="section-subtitle">
-                Professional experience in data analytics and business intelligence.
+
+<!-- =========================================================
+     HIGHLIGHTS
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="highlights">
+
+            <div class="highlight">
+                <strong>4+</strong>
+                <span>Years of professional experience</span>
+            </div>
+
+            <div class="highlight">
+                <strong>BI</strong>
+                <span>Business intelligence & analytics</span>
+            </div>
+
+            <div class="highlight">
+                <strong>SQL</strong>
+                <span>Data querying & database analytics</span>
+            </div>
+
+            <div class="highlight">
+                <strong>ETL</strong>
+                <span>Data integration & transformation</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                02 / Analytics Stack
+            </div>
+
+            <h2>
+                Tools I use to<br>
+                solve problems.
+            </h2>
+
+            <p>
+                A practical analytics stack covering visualization,
+                data analysis, databases, engineering and cloud technologies.
             </p>
 
-            <div class="experience-card">
+        </div>
 
-                <h3>Data Analyst</h3>
 
-                <div class="company">
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    BI
+                </div>
+
+                <h3>
+                    Business Intelligence
+                </h3>
+
+                <p>
+                    Power BI, Power BI Service, Tableau, KPI Dashboards,
+                    Data Visualization, Business Intelligence,
+                    Business Reporting, Looker and LookML.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    SQL
+                </div>
+
+                <h3>
+                    SQL & Databases
+                </h3>
+
+                <p>
+                    SQL, SQL Server, MySQL, Joins, CTEs,
+                    Window Functions, Stored Procedures,
+                    Views and SQL Query Optimization.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    PY
+                </div>
+
+                <h3>
+                    Python & Analytics
+                </h3>
+
+                <p>
+                    Python, Pandas, NumPy, Matplotlib, Seaborn,
+                    Exploratory Data Analysis, Statistics,
+                    Hypothesis Testing, Regression and Time Series.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    DAX
+                </div>
+
+                <h3>
+                    Data Modeling & BI Development
+                </h3>
+
+                <p>
+                    DAX, Power Query, Data Modeling, KPI Development,
+                    Dashboard Development, Data Validation,
+                    Data Quality and Reporting Automation.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ETL
+                </div>
+
+                <h3>
+                    ETL & Data Engineering
+                </h3>
+
+                <p>
+                    ETL Pipelines, REST APIs, Azure Data Factory,
+                    Databricks, PySpark, Azure Data Lake,
+                    Azure Blob Storage and Spark.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ☁
+                </div>
+
+                <h3>
+                    Cloud & Data Platforms
+                </h3>
+
+                <p>
+                    Azure, Azure Data Factory, Databricks,
+                    Snowflake, BigQuery, Git, CI/CD,
+                    Logic Apps, Power Automate and PowerApps.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     EXPERIENCE
+========================================================= -->
+
+<section id="experience" class="experience">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                03 / Experience
+            </div>
+
+            <h2>
+                Professional<br>
+                journey.
+            </h2>
+
+            <p>
+                Experience delivering analytics and business intelligence
+                solutions in a professional environment.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    APRIL 2022 — AUGUST 2026
+                </div>
+
+                <h3>
+                    Data Analyst
+                </h3>
+
+                <div class="timeline-company">
                     Codereach Software Pvt. Ltd.
                 </div>
 
-                <div class="date">
-                    April 2022 – August 2026
-                </div>
-
                 <ul>
+
                     <li>
-                        Delivered data analytics and business intelligence solutions
-                        supporting business reporting and decision-making.
+                        Delivered data analytics and business intelligence
+                        solutions supporting reporting and
+                        data-driven decision-making.
                     </li>
 
                     <li>
-                        Developed interactive dashboards and KPI reports using
+                        Developed interactive dashboards, KPI reports
+                        and business reporting solutions using
                         Power BI and Tableau.
                     </li>
 
                     <li>
-                        Designed and optimized SQL queries for data extraction,
-                        transformation and analysis.
+                        Developed and optimized SQL queries for
+                        data extraction, transformation,
+                        analysis and reporting.
                     </li>
 
                     <li>
-                        Worked with ETL processes, data validation, data quality
-                        and reporting automation.
+                        Worked across ETL processes, data validation,
+                        data quality, data modeling and
+                        reporting automation.
                     </li>
 
                     <li>
-                        Performed data analysis and visualization using Python,
-                        Pandas and NumPy.
+                        Applied Python, Pandas and NumPy for
+                        data analysis and visualization.
                     </li>
 
                     <li>
-                        Worked with cloud and data engineering technologies including
-                        Azure Data Factory, Databricks, PySpark and Snowflake.
+                        Worked with cloud and data engineering technologies
+                        including Azure Data Factory, Databricks,
+                        PySpark and Snowflake.
                     </li>
+
                 </ul>
 
             </div>
+
+
         </div>
-    </section>
 
-    <!-- Projects -->
-    <section id="projects">
-        <div class="container">
+    </div>
 
-            <h2 class="section-title">Featured Projects</h2>
+</section>
 
-            <p class="section-subtitle">
-                Selected analytics and business intelligence projects.
-            </p>
 
-            <div class="projects-grid">
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
 
-                <div class="project-card">
-                    <h3>Healthcare Analytics</h3>
+<section id="projects">
 
-                    <p>
-                        Analytics solution focused on healthcare data analysis,
-                        KPI tracking, reporting and visualization to support
-                        data-driven decision-making.
-                    </p>
+    <div class="container">
 
-                    <div class="tech">
-                        Power BI · SQL · Python · Data Visualization
-                    </div>
-                </div>
+        <div class="section-heading">
 
-                <div class="project-card">
-                    <h3>Enterprise Business Intelligence & Sales Analytics</h3>
-
-                    <p>
-                        Business intelligence solution focused on sales performance,
-                        KPI reporting, business analysis and interactive dashboards.
-                    </p>
-
-                    <div class="tech">
-                        Power BI · SQL · DAX · Power Query
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Real-Time Pricing Index for Multi-Platform E-commerce</h3>
-
-                    <p>
-                        Analytical project focused on collecting and analyzing
-                        multi-platform pricing data to identify pricing trends
-                        and competitive insights.
-                    </p>
-
-                    <div class="tech">
-                        Python · Pandas · NumPy · Data Analysis
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Automated Web Scraper for Data Extraction & Analysis</h3>
-
-                    <p>
-                        Automated data extraction workflow designed to collect,
-                        clean and analyze web-based information for analytical use.
-                    </p>
-
-                    <div class="tech">
-                        Python · Selenium · Pandas · Data Analysis
-                    </div>
-                </div>
-
+            <div class="section-number">
+                04 / Selected Work
             </div>
-        </div>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
-        <div class="container contact-content">
-
-            <h2 class="section-title">Let's Connect</h2>
+            <h2>
+                Projects built<br>
+                around data.
+            </h2>
 
             <p>
-                I'm open to opportunities in Data Analytics, Business Intelligence,
-                Power BI, SQL and related analytics roles.
+                Selected analytics projects covering healthcare,
+                enterprise sales, e-commerce and automated data extraction.
             </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT / 01
+                </div>
+
+                <h3>
+                    Healthcare Analytics
+                </h3>
+
+                <p>
+                    Analytics solution focused on healthcare data,
+                    KPI analysis, reporting and visualization to
+                    support data-driven business decisions.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span class="tech">Power BI</span>
+                    <span class="tech">SQL</span>
+                    <span class="tech">Python</span>
+                    <span class="tech">Data Visualization</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT / 02
+                </div>
+
+                <h3>
+                    Enterprise Business Intelligence & Sales Analytics
+                </h3>
+
+                <p>
+                    Business intelligence project focused on sales
+                    performance, KPI reporting, business analysis
+                    and interactive dashboard development.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span class="tech">Power BI</span>
+                    <span class="tech">SQL</span>
+                    <span class="tech">DAX</span>
+                    <span class="tech">Power Query</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT / 03
+                </div>
+
+                <h3>
+                    Real-Time Pricing Index for Multi-Platform E-commerce
+                </h3>
+
+                <p>
+                    Analytical project focused on collecting,
+                    transforming and analyzing multi-platform
+                    pricing information to understand competitive
+                    pricing patterns.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span class="tech">Python</span>
+                    <span class="tech">Pandas</span>
+                    <span class="tech">NumPy</span>
+                    <span class="tech">Analytics</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT / 04
+                </div>
+
+                <h3>
+                    Automated Web Scraper for Data Extraction & Analysis
+                </h3>
+
+                <p>
+                    Automated web data extraction workflow designed
+                    to collect, process and analyze structured
+                    information for downstream analytical use.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span class="tech">Python</span>
+                    <span class="tech">Selenium</span>
+                    <span class="tech">Pandas</span>
+                    <span class="tech">Data Analysis</span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ANALYTICS WORKFLOW
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                05 / Approach
+            </div>
+
+            <h2>
+                From raw data<br>
+                to useful insight.
+            </h2>
+
+        </div>
+
+
+        <div class="workflow">
+
+            <div class="workflow-step">
+
+                <strong>01</strong>
+
+                <span>
+                    Understand the business problem
+                </span>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <strong>02</strong>
+
+                <span>
+                    Extract & validate the data
+                </span>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <strong>03</strong>
+
+                <span>
+                    Transform & analyze
+                </span>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <strong>04</strong>
+
+                <span>
+                    Visualize meaningful KPIs
+                </span>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <strong>05</strong>
+
+                <span>
+                    Deliver actionable insights
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact" class="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="section-number">
+                06 / Contact
+            </div>
+
+            <h2>
+                Let's turn data into something useful.
+            </h2>
+
+            <p>
+                Open to opportunities across Data Analytics,
+                Business Intelligence, Power BI, SQL, Python
+                and related analytics roles.
+            </p>
+
 
             <div class="contact-links">
 
-                <a href="https://www.linkedin.com/in/pushpraj-shelar/" target="_blank">
-                    LinkedIn
+                <a
+                    class="contact-link"
+                    href="https://github.com/DApushprajshelar"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    GitHub ↗
+
                 </a>
 
-                <a href="https://github.com/DApushprajshelar" target="_blank">
-                    GitHub
+
+                <!--
+                    Replace the LinkedIn URL below with your
+                    actual LinkedIn profile URL before publishing.
+                -->
+
+                <a
+                    class="contact-link"
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    LinkedIn ↗
+
+                </a>
+
+
+                <!--
+                    Replace this with your professional email.
+                -->
+
+                <a
+                    class="contact-link"
+                    href="mailto:YOUR_EMAIL@example.com">
+
+                    Email ↗
+
                 </a>
 
             </div>
 
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            © 2026 Pushpraj Shelar · Data Analyst & Business Intelligence
-        </div>
-    </footer>
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        © 2026 Pushpraj Shelar
+        · Data Analyst & Business Intelligence Professional
+
+    </div>
+
+</footer>
+
 
 </body>
 </html>
